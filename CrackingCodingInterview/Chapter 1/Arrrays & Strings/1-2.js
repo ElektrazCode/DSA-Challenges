@@ -1,4 +1,5 @@
 /**
+ * Solution 1: go through both strings character by character adding charcode from 1st string and subtracting from 2nd should end up 0
  * Keep track of characters counts with a Map data structure, fail when
  * str2 has a character different to str2 or if any characters are left over
  * at the end.
@@ -39,6 +40,7 @@ function isPermutationMap(str1, str2) {
 }
 
 /**
+ * Solution 2: sort strings and compare them
  * Sort both strings and check if they are equal afterwards. Permutations will
  * be identical sorted strings.
  *
@@ -62,9 +64,7 @@ function isPermutationSorted(str1, str2) {
 }
 
 /**
- * Solution1: sort strings and compare them
- * Solution2: sum all char codes of all characters in both strings and compare
- * Solution3: go through both strings character by character adding charcode from 1st string and subtracting from 2nd should end up 0
+ * Solution 3: sum all char codes of all characters in both strings and compare
  *
  * Time: O(N)
  * Additional space: O(1)
@@ -72,14 +72,6 @@ function isPermutationSorted(str1, str2) {
 
 function isPermutation(str1, str2) {
   if (str1.length !== str2.length) return false;
-
-  // let letters1 = str1.split("").sort().join("");
-  // let letters2 = str2.split("").sort().join("");
-
-  // let letters1 = str1.split("").reduce((acc, e) => acc + e.charCodeAt(0), 0);
-  // let letters2 = str2.split("").reduce((acc, e) => acc + e.charCodeAt(0), 0);
-
-  // return letters1 === letters2;
 
   let checkSum = 0;
 
