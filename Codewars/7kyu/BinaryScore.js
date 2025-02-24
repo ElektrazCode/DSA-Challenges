@@ -1,0 +1,21 @@
+/**Given a number n we will define its scORe to be 0 | 1 | 2 | 3 | ... | n, where | is the bitwise OR operator.
+
+Write a function that takes n and finds it's scORe.
+
+n	scORe n
+0	0
+1	1
+49	63
+1000000	1048575 */
+// function score(n){
+//   if (n===0)
+//     return 0;
+//   return score(n-1) | n;
+// }
+
+function score(n){
+    let score = n.toString(2);
+    let complement = new Array (score.length).fill(1).join('');
+  
+    return (n===0) ? 0 : parseInt(complement, 2);
+  }
